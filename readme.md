@@ -9,7 +9,7 @@ This repository contains:
 
 ## Install
 
-This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed.
+This project uses gradle (remenber get conection with mvncentral for donwload dependencies) and java Go check them out if you don't have them locally installed.
 
 ```sh
 $ gradle build
@@ -23,7 +23,6 @@ run the ExampleApiApplication.java file (spring boot aplication)
 open h2 database at http://localhost:8080/h2-console/ with JDBC URL jdbc:h2:mem:testdb (it could cathed from the console log)
 
 
-## Usage
 
 ### references 
 - https://github.com/Qleoz12/grpcCourse
