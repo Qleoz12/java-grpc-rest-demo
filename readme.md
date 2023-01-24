@@ -20,6 +20,8 @@ $ gradle build
 run the ExampleApiApplication.java file (spring boot aplication)
 
 
+open h2 database at http://localhost:8080/h2-console/ with JDBC URL jdbc:h2:mem:testdb (it could cathed from the console log)
+
 
 ## Usage
 

@@ -25,6 +25,11 @@ public class SchoolsServiceImpl implements SchoolsService {
     }
 
     @Async("asyncExecutor")
+    public CompletableFuture<List<Schools>> saveAll(Iterable<Schools> schools) {
+        return CompletableFuture.completedFuture(schoolsRepository.saveAll(schools));
+    }
+
+    @Async("asyncExecutor")
     @Override
     public CompletableFuture<Schools> getOneById(Long id) {
         Optional<Schools> school = schoolsRepository.findById(id);

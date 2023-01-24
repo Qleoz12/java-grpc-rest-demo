@@ -6,11 +6,15 @@ option java_package = "io.qleoz12";
 import "google/protobuf/wrappers.proto";
 
 service  ExampleService {
+//unary
 rpc CreateExample (CreateExampleRequest) returns (CreateExampleResponse);
 rpc GetExamples (GetExamplesRequest) returns (GetExamplesResponse);
 rpc GetExample (GetExampleRequest) returns (GetExampleResponse);
 rpc UpdateExample (ExampleDto) returns (UpdateExampleResponse);
-    }
+//streams
+rpc CreateExampleStream (stream CreateExampleRequest) returns (CreateStreamExampleResponse);
+rpc GetExamplesStream(GetExamplesStreamRequest) returns (stream GetExampleResponse);
+}
 
 message CreateExampleRequest {
   string name = 1;
@@ -19,6 +23,14 @@ message CreateExampleRequest {
 
 message CreateExampleResponse {
   ExampleDto example = 1;
+}
+
+message CreateStreamExampleResponse {
+  repeated ExampleDto example = 1;
+}
+
+message GetExamplesStreamRequest {
+  string location= 1;
 }
 
 message ExampleDto {
